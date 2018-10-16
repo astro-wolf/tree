@@ -1,5 +1,13 @@
 import java.util.Stack;
 
+/**
+ * Left - Root - Right
+ * -> create an empty stack
+ * -> initialize currentNode with root
+ * -> run following while currentNode is not null OR stack is not empty
+ * -> if currentNode is not null, then push current node onto stack, and set current node to current node's left
+ * -> if currentNode is null, pop a node from stack, print it's value, and set current node to right of current node
+ */
 public class InOrderTraversal {
 
     public static void main(String[] args) {

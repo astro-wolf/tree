@@ -1,5 +1,13 @@
 import java.util.Stack;
 
+/**
+ * Root - Left - Right
+ * -> create a stack, and push root onto it
+ * -> run following while stack is not empty
+ * -> pop a node, print its value
+ * -> add node's right to stack
+ * -> add node's left to stack
+ */
 public class PreOrderTraversal {
 
     public static void main(String[] args) {
