@@ -1,11 +1,11 @@
 /**
  * Build a binary tree from preOrder and inOrder array
  */
-public class BuildBinaryTree {
+public class BuildTreeFromInorderPreorder {
 
     public static void main(String[] args) {
-        BuildBinaryTree buildBinaryTree = new BuildBinaryTree();
-        TreeNode tree = buildBinaryTree.buildBinaryTree(new int[]{1, 2, 4, 3, 5, 6}, new int[]{4, 2, 5, 1, 6, 3});
+        BuildTreeFromInorderPreorder buildTreeFromInorderPreorder = new BuildTreeFromInorderPreorder();
+        TreeNode tree = buildTreeFromInorderPreorder.buildBinaryTree(new int[]{1, 2, 4, 3, 5, 6}, new int[]{4, 2, 5, 1, 6, 3});
         System.out.print(tree);
     }
 
@@ -21,13 +21,14 @@ public class BuildBinaryTree {
         int data = preOrder[preStart];
         TreeNode curr = new TreeNode(data);
         int offset = inStart;
-        for (; offset < inEnd; offset++)
+        for (; offset < inEnd; offset++) {
             if (inOrder[offset] == data)
                 break;
+        }
         curr.left = buildBt(preOrder, preStart + 1, preStart + offset - inStart,
                 inOrder, inStart, offset - 1);
-        curr.right = buildBt(preOrder, preStart + offset - inStart + 1,
-                preEnd, inOrder, offset + 1, inEnd);
+        curr.right = buildBt(preOrder, preStart + offset - inStart + 1, preEnd,
+                inOrder, offset + 1, inEnd);
         return curr;
     }
 
