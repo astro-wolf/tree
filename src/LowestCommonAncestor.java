@@ -9,8 +9,10 @@ public class LowestCommonAncestor {
         treeNode.right = new TreeNode(3);
         treeNode.left.left = new TreeNode(4);
         treeNode.left.right = new TreeNode(5);
+        treeNode.right.left = new TreeNode(6);
+        treeNode.right.right = new TreeNode(7);
         LowestCommonAncestor lowestCommonAncestor = new LowestCommonAncestor();
-        TreeNode lca = lowestCommonAncestor.LCA(treeNode, treeNode.left.left, treeNode.right);
+        TreeNode lca = lowestCommonAncestor.lowestCommonAncestor(treeNode, treeNode.left.left, treeNode.left.right);
         System.out.println(lca);
     }
 
@@ -35,6 +37,12 @@ public class LowestCommonAncestor {
 
         //otherwise, check if left or right subtree is LCA
         return left != null ? left : right;
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while((root.val - p.val) * (root.val - q.val) > 0)
+            root = p.val < root.val ? root.left : root.right;
+        return root;
     }
 
 }

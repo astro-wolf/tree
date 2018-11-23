@@ -15,6 +15,11 @@ public class AreMirrors {
         System.out.print(isMirror);
     }
 
+    //to find if one tree is symmetric
+    public boolean findMirrors(TreeNode root) {
+        return areMirrors(root.left, root.right);
+    }
+
     public boolean areMirrors(TreeNode root1, TreeNode root2) {
         if(root1 == null && root2 == null)
             return true;
