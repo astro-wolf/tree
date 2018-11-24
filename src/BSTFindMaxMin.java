@@ -9,7 +9,7 @@ public class BSTFindMaxMin {
      * @param root root node
      * @return node with smallest element
      */
-    public TreeNode findMin(TreeNode root) {
+    public static TreeNode findMin(TreeNode root) {
         while(root.left != null)
             root = root.left;
         return root;
@@ -20,7 +20,7 @@ public class BSTFindMaxMin {
      * @param root root node
      * @return node with greatest element
      */
-    public TreeNode findMax(TreeNode root) {
+    public static TreeNode findMax(TreeNode root) {
         while(root.right != null)
             root = root.right;
         return root;
